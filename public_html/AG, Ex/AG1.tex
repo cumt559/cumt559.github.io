@@ -1,0 +1,206 @@
+\documentclass[12pt]{amsart}
+\usepackage{amscd,amsmath,amssymb,amsfonts}
+\usepackage[all]{xypic}
+\usepackage{pstricks}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage[active]{srcltx}
+\usepackage{enumerate}
+\usepackage{datenumber}
+%\usepackage{enumitem}
+%%%%%%%%%%%%%%%%%%%
+
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{const}[thm]{Construction}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{conj}[thm]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{disc}[thm]{Discussion}
+\newtheorem{question}[thm]{Question}
+\newtheorem{nota}[thm]{Notations}
+\newtheorem{chal}[thm]{Challenge}
+\newtheorem{claim}[thm]{Claim}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{rmks}[thm]{Remarks}
+\newtheorem{Aufgabe}{Aufgabe}
+\newtheorem{ex}{Exercise}
+\newtheorem{sol}{Solution}
+\newtheorem{Satz}{Satz}
+\numberwithin{Aufgabe}{section}
+%\numberwithin{equation}{section}
+
+
+\newcommand{\ldr}{\langle D \rangle}
+\newcommand{\al}{\alpha}
+\newcommand{\p}{\partial}
+\newcommand{\e}{\epsilon}
+\newcommand{\eq}[2]{\begin{equation}\label{#1}#2 \end{equation}}
+\newcommand{\ml}[2]{\begin{multline}\label{#1}#2 \end{multline}}
+\newcommand{\ga}[2]{\begin{gather}\label{#1}#2 \end{gather}}
+\newcommand{\gr}{{\rm gr}}
+\newcommand{\mc}{\mathcal}
+\newcommand{\mb}{\mathbb}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\inj}{\hookrightarrow}
+%\newcommand{\red}{{\rm red}}
+\newcommand{\codim}{{\rm codim}}
+\newcommand{\rank}{{\rm rank}}
+\newcommand{\Pic}{{\rm Pic}}
+
+\newcommand{\Ker}{{\rm Ker}}
+\newcommand{\Hom}{{\rm Hom}}
+\newcommand{\im}{{\rm im}}
+\newcommand{\Spec}{{\rm Spec \,}}
+\newcommand{\Sing}{{\rm Sing}}
+\newcommand{\Char}{{\rm char}}
+\newcommand{\Tr}{{\rm Tr}}
+\newcommand{\Gal}{{\rm Gal}}
+\newcommand{\Min}{{\rm Min \ }}
+\newcommand{\Max}{{\rm Max \ }}
+\newcommand{\rt}{{\rm res \ Tr}}
+\newcommand{\trace}{{\rm Tr}}
+\newcommand{\Nm}{{\rm Nm}}
+\newcommand{\sym}{\text{Sym}}
+% Skriptbuchstaben
+\newcommand{\sA}{{\mathcal A}}
+\newcommand{\sB}{{\mathcal B}}
+\newcommand{\sC}{{\mathcal C}}
+\newcommand{\sD}{{\mathcal D}}
+
+\newcommand{\sE}{{\mathcal E}}
+\newcommand{\sF}{{\mathcal F}}
+\newcommand{\sG}{{\mathcal G}}
+\newcommand{\sH}{{\mathcal H}}
+\newcommand{\sI}{{\mathcal I}}
+\newcommand{\sJ}{{\mathcal J}}
+\newcommand{\sK}{{\mathcal K}}
+\newcommand{\sL}{{\mathcal L}}
+\newcommand{\sM}{{\mathcal M}}
+\newcommand{\sN}{{\mathcal N}}
+\newcommand{\sO}{{\mathcal O}}
+\newcommand{\sP}{{\mathcal P}}
+\newcommand{\sQ}{{\mathcal Q}}
+\newcommand{\sR}{{\mathcal R}}
+\newcommand{\sS}{{\mathcal S}}
+\newcommand{\sT}{{\mathcal T}}
+\newcommand{\sU}{{\mathcal U}}
+\newcommand{\sV}{{\mathcal V}}
+\newcommand{\sW}{{\mathcal W}}
+\newcommand{\sX}{{\mathcal X}}
+\newcommand{\sY}{{\mathcal Y}}
+
+\newcommand{\sZ}{{\mathcal Z}}
+% Sonderbuchstaben mit Doppellinie
+\newcommand{\A}{{\mathbb A}}
+\newcommand{\B}{{\mathbb B}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\D}{{\mathbb D}}
+\newcommand{\E}{{\mathbb E}}
+\newcommand{\F}{{\mathbb F}}
+\newcommand{\G}{{\mathbb G}}
+\renewcommand{\H}{{\mathbb H}}
+%\newcommand{\I}{{\mathbb I}}
+\newcommand{\J}{{\mathbb J}}
+\newcommand{\M}{{\mathbb M}}
+\newcommand{\N}{{\mathbb N}}
+\renewcommand{\P}{{\mathbb P}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\T}{{\mathbb T}}
+%\newcommand{\U}{{\mathbb U}}
+\newcommand{\V}{{\mathbb V}}
+\newcommand{\W}{{\mathbb W}}
+\newcommand{\X}{{\mathbb X}}
+\newcommand{\Y}{{\mathbb Y}}
+\newcommand{\Z}{{\mathbb Z}}
+
+
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fb}{\mathfrak{b}}
+\newcommand{\fc}{\mathfrak{c}}
+\newcommand{\fd}{\mathfrak{d}}
+\newcommand{\fe}{\mathfrak{e}}
+\newcommand{\ff}{\mathfrak{f}}
+\newcommand{\fg}{\mathfrak{g}}
+\newcommand{\fh}{\mathfrak{h}}
+\newcommand{\fraki}{\mathfrak{i}}
+\newcommand{\fj}{\mathfrak{j}}
+\newcommand{\fk}{\mathfrak{k}}
+\newcommand{\fl}{\mathfrak{l}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fn}{\mathfrak{n}}
+\newcommand{\fo}{\mathfrak{o}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fq}{\mathfrak{q}}
+\newcommand{\fr}{\mathfrak{r}}
+\newcommand{\fs}{\mathfrak{s}}
+\newcommand{\ft}{\mathfrak{t}}
+\newcommand{\fu}{\mathfrak{u}}
+\newcommand{\fv}{\mathfrak{v}}
+\newcommand{\fw}{\mathfrak{w}}
+\newcommand{\fx}{\mathfrak{x}}
+\newcommand{\fy}{\mathfrak{y}}
+\newcommand{\fz}{\mathfrak{z}}
+
+
+\setcounter{section}{1}
+
+\begin{document}
+
+\setdatetoday
+\addtocounter{datenumber}{4}
+\setdatebynumber{\thedatenumber}
+
+\begin{flushright}\today
+\end{flushright}
+\begin{center}
+ {\bf \Huge
+Algebraic Groups}\\  
+\vspace{0.5 cm}{\Large Dr. Lei Zhang}\\  
+\vspace{0.7 cm}
+{\bf\large Exercise sheet {1}}\footnote{ If you want your solutions to be corrected, please hand them in just before the lecture on \datedate. If you have any questions concerning these exercises you can contact Lei Zhang via l.zhang@fu-berlin.de or come to Arnimallee 3  112A. }\\
+\end{center}
+
+\begin{ex}
+Let $G$ be a group scheme of finite type over a field $k$. Let $\bar{k}$ be the algebraic closure of $k$. Show that if $G\times_k\bar{k}$ is reduced then $G$ is smooth over $k$. (Hint: Use the fact that the set of smooth points of a scheme of finite type over a field is open. Then do the argument exactly the same as we did in the class, replacing flat locus by smooth locus.)
+\end{ex} 
+
+\begin{ex}
+Let $f:A\to B$ be an injective map of Hopf-algebras over $k$. We want to show that $f$ is a faithfully flat ring map. In the class we have shown that it is enough to show the result for the case when $k=\bar{k}$ and $A, B$ are of finite type over $k$. We have also shown that $f$ is faithfully flat when $A$ is smooth.  In this exercise we want to use the results we proved in the class to finish the proof of this lemma.  Let $G_A:=\Spec(A)$ (resp. $G_B:=\Spec(B)$), and let $g: G_B\to G_A$ be the induced map.
+\begin{enumerate} \item For any morphism of group schemes $\phi:H\to G$ define the kernel $\Ker(\phi)$ of $\phi$ to be the fibred product $$\xymatrix{\Ker(\phi)\ar[r]\ar[d]^{i}&\Spec(k)\ar[d]^-e\\ H\ar[r]^-{\phi}&G}$$ where $e:\Spec(k)\to G$ is the unit morphism  of $G$. Show that $\Ker(\phi)$ is injective, and for any group scheme homomorphism $K\xrightarrow{\lambda}H$ whose composition $\phi\circ \lambda$ factors the identity  $e$ of $G$, then there is a unique morphism $\varphi: K\to \Ker(\phi)$ such that $\varphi\circ i=\lambda$. 
+\item  Notations being as in (1) show that there is a canonical isomorphism $ H\times_k\Ker(\phi)\cong H\times_GH$.
+\item Let $I_A$ be  the kernel  of the counit map $\epsilon:A\to k$. Show that $\Ker(g)=\Spec(B/I_AB)$.  
+\item Take a basis $\{e_i\}_{i\in I}$ of the $k$-vector space $B/I_AB$, and let $x_i\in B$ a lift of  $e_i$ under the quotient $B\to B/I_AB$. Define a map $\varphi: A^{\oplus I}\to B$ sending each $i $-th basis of $ A^{\oplus I}$ to $x_i$. Show that if $I_A$ is nilpotent then $\varphi$ is surjective.
+\item Using (2) to show that $B\otimes_AB$ is a free $B$ module.
+\item Show that if $I_A$ is nilpotent then $\varphi\otimes_A B$ is an isomorphism.
+\item Show that if $I_A$ is nilpotent then $f$ is faitfully flat. (Hint: Consider the following diagram $$\xymatrix{A^{\oplus I}\ar[rr]^-{\varphi}\ar[d]&&B\ar[d]\\B^{\oplus I}\ar[rr]^-{\varphi\otimes_AB}&&B\otimes_AB}$$ and show that $\varphi$ is injective iff $\varphi\otimes_AB$ is.)
+\item Let $k$ be of characteristic $p>0$. Show that for any affine group scheme $G$ of finite type over $k$,  there is some $i\in \N$ such that the relative Frobenius twist $G\to G^{(i)}$ factors through a smooth closed subgroup scheme $H\subseteq G^{(i)}$ and the factorization $G\to H$ induces an injection on the affine rings. (Hint:  Use Ex 1.)
+\item  Let $k$ be of characteristic $p>0$.  Using (8) we get a factorization $G_A\xrightarrow{\xi}H_A\to G_{A}^{(i)}$. By what we have shown in the class the composition $\xi\circ g: G_B\to H_A$ is faithfully flat. Show that $g$ is faithfully flat if and only if $\Ker(\xi\circ g)\to\Ker(\xi)$ is faithfully flat. (Hint: using the fact that a map of rings is faithfully flat if and only if it is so after a faithfully flat base change.) 
+\item   Let $k$ be of characteristic $p>0$. Using (7) and (9) show that $f$ is faithfully flat. 
+\end{enumerate}
+\end{ex}
+\begin{rmk} Though we only proved the lemma in case of characteristic $p>0$, it works also in characteristic $0$, as algebraic groups in characteristic 0 are always smooth. We will prove this in the forthcoming lectures.
+\end{rmk}
+
+\begin{ex} Let $\C$ be the field of complex numbers. Let $\alpha:=2016\in\C$. Show that there is a unique $\C$-group scheme homomorphism  $\phi:(\Z)_{\C}\to \G_{m,\C}$ sending $1\in(\Z)_{\C}(\C)=\C$ to $2016\in\G_{m,\C}(\C)=\C^*$, where $(\Z)_{\C}$ is the constant group scheme defined by the abstract additive group $\C$. Show also that $\phi$ is an injective map but not a closed embedding.
+\end{ex}
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+

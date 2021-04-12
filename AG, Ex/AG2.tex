@@ -1,0 +1,207 @@
+\documentclass[12pt]{amsart}
+\usepackage{amscd,amsmath,amssymb,amsfonts}
+\usepackage[all]{xypic}
+\usepackage{pstricks}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage[active]{srcltx}
+\usepackage{enumerate}
+\usepackage{datenumber}
+%\usepackage{enumitem}
+%%%%%%%%%%%%%%%%%%%
+
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{const}[thm]{Construction}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{conj}[thm]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{disc}[thm]{Discussion}
+\newtheorem{question}[thm]{Question}
+\newtheorem{nota}[thm]{Notations}
+\newtheorem{chal}[thm]{Challenge}
+\newtheorem{claim}[thm]{Claim}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{rmks}[thm]{Remarks}
+\newtheorem{Aufgabe}{Aufgabe}
+\newtheorem{ex}{Exercise}
+\newtheorem{sol}{Solution}
+\newtheorem{Satz}{Satz}
+\numberwithin{Aufgabe}{section}
+%\numberwithin{equation}{section}
+
+
+\newcommand{\ldr}{\langle D \rangle}
+\newcommand{\al}{\alpha}
+\newcommand{\p}{\partial}
+\newcommand{\e}{\epsilon}
+\newcommand{\eq}[2]{\begin{equation}\label{#1}#2 \end{equation}}
+\newcommand{\ml}[2]{\begin{multline}\label{#1}#2 \end{multline}}
+\newcommand{\ga}[2]{\begin{gather}\label{#1}#2 \end{gather}}
+\newcommand{\gr}{{\rm gr}}
+\newcommand{\mc}{\mathcal}
+\newcommand{\mb}{\mathbb}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\inj}{\hookrightarrow}
+%\newcommand{\red}{{\rm red}}
+\newcommand{\Coker}{{\rm Coker}}
+\newcommand{\rank}{{\rm rank}}
+\newcommand{\Pic}{{\rm Pic}}
+
+\newcommand{\Ker}{{\rm Ker}}
+\newcommand{\Hom}{{\rm Hom}}
+\newcommand{\im}{{\rm im}}
+\newcommand{\Spec}{{\rm Spec \,}}
+\newcommand{\Sing}{{\rm Sing}}
+\newcommand{\Char}{{\rm char}}
+\newcommand{\Tr}{{\rm Tr}}
+\newcommand{\Gal}{{\rm Gal}}
+\newcommand{\Min}{{\rm Min \ }}
+\newcommand{\Max}{{\rm Max \ }}
+\newcommand{\rt}{{\rm res \ Tr}}
+\newcommand{\trace}{{\rm Tr}}
+\newcommand{\Nm}{{\rm Nm}}
+\newcommand{\sym}{\text{Sym}}
+% Skriptbuchstaben
+\newcommand{\sA}{{\mathcal A}}
+\newcommand{\sB}{{\mathcal B}}
+\newcommand{\sC}{{\mathcal C}}
+\newcommand{\sD}{{\mathcal D}}
+
+\newcommand{\sE}{{\mathcal E}}
+\newcommand{\sF}{{\mathcal F}}
+\newcommand{\sG}{{\mathcal G}}
+\newcommand{\sH}{{\mathcal H}}
+\newcommand{\sI}{{\mathcal I}}
+\newcommand{\sJ}{{\mathcal J}}
+\newcommand{\sK}{{\mathcal K}}
+\newcommand{\sL}{{\mathcal L}}
+\newcommand{\sM}{{\mathcal M}}
+\newcommand{\sN}{{\mathcal N}}
+\newcommand{\sO}{{\mathcal O}}
+\newcommand{\sP}{{\mathcal P}}
+\newcommand{\sQ}{{\mathcal Q}}
+\newcommand{\sR}{{\mathcal R}}
+\newcommand{\sS}{{\mathcal S}}
+\newcommand{\sT}{{\mathcal T}}
+\newcommand{\sU}{{\mathcal U}}
+\newcommand{\sV}{{\mathcal V}}
+\newcommand{\sW}{{\mathcal W}}
+\newcommand{\sX}{{\mathcal X}}
+\newcommand{\sY}{{\mathcal Y}}
+
+\newcommand{\sZ}{{\mathcal Z}}
+% Sonderbuchstaben mit Doppellinie
+\newcommand{\A}{{\mathbb A}}
+\newcommand{\B}{{\mathbb B}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\D}{{\mathbb D}}
+\newcommand{\E}{{\mathbb E}}
+\newcommand{\F}{{\mathbb F}}
+\newcommand{\G}{{\mathbb G}}
+\renewcommand{\H}{{\mathbb H}}
+%\newcommand{\I}{{\mathbb I}}
+\newcommand{\J}{{\mathbb J}}
+\newcommand{\M}{{\mathbb M}}
+\newcommand{\N}{{\mathbb N}}
+\renewcommand{\P}{{\mathbb P}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\T}{{\mathbb T}}
+%\newcommand{\U}{{\mathbb U}}
+\newcommand{\V}{{\mathbb V}}
+\newcommand{\W}{{\mathbb W}}
+\newcommand{\X}{{\mathbb X}}
+\newcommand{\Y}{{\mathbb Y}}
+\newcommand{\Z}{{\mathbb Z}}
+
+
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fb}{\mathfrak{b}}
+\newcommand{\fc}{\mathfrak{c}}
+\newcommand{\fd}{\mathfrak{d}}
+\newcommand{\fe}{\mathfrak{e}}
+\newcommand{\ff}{\mathfrak{f}}
+\newcommand{\fg}{\mathfrak{g}}
+\newcommand{\fh}{\mathfrak{h}}
+\newcommand{\fraki}{\mathfrak{i}}
+\newcommand{\fj}{\mathfrak{j}}
+\newcommand{\fk}{\mathfrak{k}}
+\newcommand{\fl}{\mathfrak{l}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fn}{\mathfrak{n}}
+\newcommand{\fo}{\mathfrak{o}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fq}{\mathfrak{q}}
+\newcommand{\fr}{\mathfrak{r}}
+\newcommand{\fs}{\mathfrak{s}}
+\newcommand{\ft}{\mathfrak{t}}
+\newcommand{\fu}{\mathfrak{u}}
+\newcommand{\fv}{\mathfrak{v}}
+\newcommand{\fw}{\mathfrak{w}}
+\newcommand{\fx}{\mathfrak{x}}
+\newcommand{\fy}{\mathfrak{y}}
+\newcommand{\fz}{\mathfrak{z}}
+
+
+\setcounter{section}{1}
+
+\begin{document}
+
+\setdatetoday
+\addtocounter{datenumber}{5}
+\setdatebynumber{\thedatenumber}
+
+\begin{flushright}\today
+\end{flushright}
+\begin{center}
+ {\bf \Huge
+Algebraic Groups}\\  
+\vspace{0.5 cm}{\Large Dr. Lei Zhang}\\  
+\vspace{0.7 cm}
+{\bf\large Exercise sheet {2}}\footnote{ If you want your solutions to be corrected, please hand them in just before the lecture on \datedate. If you have any questions concerning these exercises you can contact Lei Zhang via l.zhang@fu-berlin.de or come to Arnimallee 3  112A. }\\
+\end{center}
+
+\begin{ex} Let $S$ be a scheme. Let $\sF$ be a presheaf, i.e. a functor $({\rm Sch}/S)\to ({\rm Sets})$.  In the following we are going to define, step by step, the sheafication of $\sF$.
+\begin{enumerate}
+\item  Let $U\in(\text{\rm Sch}/S)$. Take $\sF^s(U)$ to be the set $\sF(U)/\sim$, where $\sim$ is an equivalence relation defined as follows: If $a,b\in \sF(U)$, then $a\sim b$ if and only if there is a n fppf covering $\{U_i\to U\}_{i\in I}$ such that $a|_{U_i}=b|_{U_i}$ for all $i\in I$. Show that in this way we get a presheaf $\sF^s$ which is separated, i.e. for any fppf-covering $\{U_i\to U\}_{i\in I}$ the map $\sF(U)\to\prod_{i\in I}\sF(U_i)$ is injective.
+\item Let $U\in(\text{\rm Sch}/S)$. Take $\sF^a(U)$ to be the set of pairs $(\{U_i\to U\}_{i\in I},\{a_i\}_{i\in I})$, where $\{U_i\to U\}_{i\in I}$ is a covering and $a_i\in \sF^s(U_i)$ such that the pullback of $a_i,a_j$ to $\sF^s(U_i\times_UU_j)$ concide, modulo the following equivalent relation:
+$(\{U_i\to U\}_{i\in I},\{a_i\}_{i\in I})$ is equivalent to $(\{V_j\to V\}_{j\in J},\{b_j\}_{j\in J})$ if and only if the restriction of $a_i, b_j$ to $\sF^s(U_i\times_UV_j)$ coincide. Show that $F^a$ is a sheaf.
+\item Show that the composition $\pi:\sF\to\sF^s\to\sF^a$ satisfies the following universal property:
+Given any fppf sheaf $\sG$ and any map $\phi: \sF\to \sG$ there exists a unique map $\lambda:\sF^a\to\sG$ such that $\phi=\lambda\circ \pi$.
+\item Show that $\sF\to\sF^a$ is injective if and only if $\sF$ is separated.
+\end{enumerate}
+\end{ex}
+
+\begin{ex} Let $f:G_1\to G_2$ be map of group schemes locally of finite presentation over a scheme $S$.
+ \begin{enumerate} \item We define the kernel $\Ker(f)$ of $f$ to be the $S$-group scheme obtained by the following pullback diagram $$\xymatrix{\Ker(f)\ar[r]\ar[d]&S\ar[d]^-e\\ G_1\ar[r]^-f& G_2}$$ Show that under this definition $\Ker(f)$ is indeed the kernel of $f$, i.e. it satisfies the universal property of "kernel".
+\item Recall that in the class we have defined the cokernel $\Coker(f)$ of $f$ as the fppf  associated sheaf of the presheaf $$T\mapsto \Coker(G_1(T)\xrightarrow{f(T)}G_2(T))$$ and if $S=\Spec(k)$ then $\Coker(f)$ is representable by a scheme of finite type over $k$.  Show that when $S=k$ and  the image of each $f(T)$ is normal for all $k$-scheme $T$, then  $\Coker(f)$ is a group scheme and satisfies the universal property for a cokernel.
+\item Show that the category of commutative algebraic group over a field $k$ is an Abelian category.
+\end{enumerate}
+\end{ex}
+
+\begin{ex} Let $\alpha_{p,k}=\Spec(k[T]/T^p)$, where $k$ is a field of characteristic $p$. 
+\begin{enumerate}
+\item Show that $\alpha_{p,k}$ represents the following group functor: Given a $k$-scheme $T$, we associate with $T$ the group $$\{x\in\Gamma(T,\sO_T)|x^p=0\}$$
+\item Show that the category of finite dimensional $\alpha_{p,k}$-representations is equivalent to the category of pairs $(V, T)$, where $V$ is a finite dimensional $k$-vector space and $T: V\to V$ is a linear map such that $T^p=0$. (Hint: Use the explicit calculation we did in the class.)
+\end{enumerate}
+\end{ex}
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
